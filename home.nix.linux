@@ -73,12 +73,6 @@ in
   # Enable Home Manager
   programs.home-manager.enable = true;
 
-  home = {
-    username = "bjk";
-    homeDirectory = "/Users/bjk";
-    stateVersion = "21.03";
-  };
-
   # Golang
   programs.go.enable = true;
 
