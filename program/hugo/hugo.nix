@@ -21,6 +21,7 @@ in buildGoModule {
     rev = "v${hugoVersion}";
     sha256 = sha;
   };
+  goDeps = ./deps.nix;
 
   golibsass = libsass;
 
