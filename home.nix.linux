@@ -117,7 +117,6 @@ in
     nix-serve
     nixos-generators
     nodejs # node and npm
-    pinentry_mac # Necessary for GPG
     pre-commit # Pre-commit CI hook tool
     protobuf # Protocol Buffers
     python3 # Have you upgraded yet???
