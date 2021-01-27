@@ -33,8 +33,8 @@ let
   '';
 
   hugoLocal = pkgs.callPackage ./program/hugo/hugo.nix {
-    hugoVersion = "0.74.3";
-    sha = "0rikr4yrjvmrv8smvr8jdbcjqwf61y369wn875iywrj63pyr74r9";
+    hugoVersion = "0.80.0";
+    sha = "0xs9y5lj0mya6ag625x8j91mn9l9r13gxaqxyvl1fl40y2yjz1zm";
     vendorSha = "031k8bvca1pb1naw922vg5h95gnwp76dii1cjcs0b1qj93isdibk";
   };
 
@@ -80,6 +80,7 @@ in
     homeDirectory = "/Users/bjk";
     stateVersion = "21.03";
   };
+  home.file.".direnvrc".source = ./user/direnvrc;
 
   # Golang
   programs.go.enable = true;
@@ -115,7 +116,7 @@ in
     gnupg # gpg
     htop # Resource monitoring
     httpie # Like curl but more user friendly
-    hugoLocal # Best static site generator ever
+    #hugoLocal # Best static site generator ever
     jq # JSON parsing for the CLI
     just # Intriguing new make replacement
     kubectl # Kubernetes CLI tool

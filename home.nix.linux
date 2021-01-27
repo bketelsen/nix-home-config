@@ -83,6 +83,8 @@ in
     TERMINAL = "alacritty";
   };
 
+  home.file.".direnvrc".source = ./user/direnvrc;
+
   # Miscellaneous packages (in alphabetical order)
   home.packages = with pkgs; [
     autoconf # Broadly used tool, no clue what it does
