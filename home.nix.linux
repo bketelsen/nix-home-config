@@ -8,7 +8,7 @@ let
   # Import other Nix files
   imports = [
     ./role/linux-workstation/home.nix
-    ./user/shell.nix
+    ./user/zshell.nix
   ];
 
   # Handly shell command to view the dependency tree of Nix packages
