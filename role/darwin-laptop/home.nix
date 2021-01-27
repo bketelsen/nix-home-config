@@ -6,7 +6,6 @@ let
     ../../arch/darwin/home.nix
     ../../program/git/git.nix
     ../../program/editor/neovim.nix
-    ../../program/editor/vscode.nix
     ../../program/terminal/tmux.nix
   ];
 
