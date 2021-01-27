@@ -6,13 +6,9 @@ let
   # Set all shell aliases programatically
   shellAliases = {
     # Aliases for commonly used tools
-    #hm = "humioctl";
     grep = "grep --color=auto";
-    #circleci = "circleci-cli";
     just = "just --no-dotenv";
     diff = "diff --color=auto";
-    #iex = "iex --dot-iex ~/.iex.exs";
-    #hk = "heroku";
     cat = "bat";
     we = "watchexec";
     find = "fd";
@@ -20,13 +16,9 @@ let
     l = "exa";
     ll = "ls -lh";
     ls = "exa";
-    #dk = "docker";
     k = "kubectl";
     dc = "docker-compose";
-    #bazel = "bazelisk";
     md = "mdcat";
-    #mk = "minikube";
-    #start-docker = "docker-machine start default";
     tf = "terraform";
     hms = "home-manager switch";
 
