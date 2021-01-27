@@ -8,8 +8,8 @@ in {
   programs.git = {
     package = pkgs.gitAndTools.gitFull;
     enable = true;
-    userName = "Luc Perkins";
-    userEmail = "luc@blockfi.com";
+    userName = "Brian Ketelsen";
+    userEmail = "mail@bjk.fyi";
 
     # Replaces ~/.gitignore
     ignores = [
@@ -55,8 +55,8 @@ in {
         whitespace = "trailing-space,space-before-tab";
       };
 
-      commit.gpgsign = "true";
-      gpg.program = "gpg2";
+      #commit.gpgsign = "true";
+      #gpg.program = "gpg2";
 
       protocol.keybase.allow = "always";
       credential.helper = "osxkeychain";
