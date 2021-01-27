@@ -1,15 +1,6 @@
-{ config, lib, ... }:
-let
-  nigpkgsRev = "nixpkgs-unstable";
-  pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${nigpkgsRev}.tar.gz") { };
+{ config, lib, pkgs, imports,... }:
 
-  allowUnfree = true;
-  nixpkgs.config.allowUnfree = true;
-  # Import other Nix files
-  imports = [
-    ./role/darwin-laptop/home.nix
-    ./user/shell.nix
-  ];
+let
 
   # Handly shell command to view the dependency tree of Nix packages
   depends = pkgs.writeScriptBin "depends" ''
@@ -30,8 +21,8 @@ let
     nix-shell --pure --run "$@"
   '';
 
-  hugoLocal = pkgs.callPackage ./program/hugo/hugo.nix {
-    hugoVersion = "0.74.3";
+  hugoLocal = pkgs.callPackage ../hugo/hugo.nix {
+    hugoVersion = "0.80.0";
     sha = "0rikr4yrjvmrv8smvr8jdbcjqwf61y369wn875iywrj63pyr74r9";
     vendorSha = "031k8bvca1pb1naw922vg5h95gnwp76dii1cjcs0b1qj93isdibk";
   };
@@ -44,8 +35,6 @@ let
   ];
 
   pythonPackages = with pkgs.python38Packages; [
-    bpython
-    openapi-spec-validator
     pip
     requests
     setuptools
@@ -60,10 +49,8 @@ let
     gh
   ];
 
-in
-{
+in {
   inherit imports;
-
   # Allow non-free (as in beer) packages
   nixpkgs.config = {
     allowUnfree = true;
@@ -73,11 +60,6 @@ in
   # Enable Home Manager
   programs.home-manager.enable = true;
 
-  home = {
-    username = "bjk";
-    homeDirectory = "/Users/bjk";
-    stateVersion = "21.03";
-  };
 
   # Golang
   programs.go.enable = true;
@@ -119,7 +101,6 @@ in
     lorri # Easy Nix shell
     mdcat # Markdown converter/reader for the CLI
     niv # Nix dependency management
-    nixpkgs-fmt
     nix-serve
     nixos-generators
     nodejs # node and npm

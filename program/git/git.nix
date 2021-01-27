@@ -1,10 +1,10 @@
 # Git settings
 
 { config, lib, pkgs, ... }:
-
 let
   vscode = pkgs.vscode;
-in {
+in
+{
   programs.git = {
     package = pkgs.gitAndTools.gitFull;
     enable = true;
