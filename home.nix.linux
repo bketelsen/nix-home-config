@@ -5,6 +5,8 @@ let
 
   allowUnfree = true;
   nixpkgs.config.allowUnfree = true;
+  keep-derivations = true;
+  keep-outputs = true;
   # Import other Nix files
   imports = [
     ./role/linux-workstation/home.nix

@@ -4,6 +4,8 @@ let
   pkgs = import (fetchTarball "https://github.com/nixos/nixpkgs/archive/${nigpkgsRev}.tar.gz") { };
 
   allowUnfree = true;
+  keep-derivations = true;
+  keep-outputs = true;
   nixpkgs.config.allowUnfree = true;
   # Import other Nix files
   imports = [
@@ -81,6 +83,8 @@ in
 
   # Golang
   programs.go.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.enableNixDirenvIntegration = true;
 
   home.sessionVariables = {
     EDITOR = "nvim";
